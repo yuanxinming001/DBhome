@@ -248,6 +248,6 @@ class DBhome(unittest.TestCase):
                     print("首页特色功能模块遥控器、魔法同屏、远程看家、视频通话tab均跳转错误页面")
                     result1.close()
 
-            print(f'case{casenumber}、检查首页特色功能模块遥控器、魔法同屏、远程看家、视频通话tab均跳正确用例执行完毕')
+            print(f'case{casenumber}、检查首页特色功能模块遥控器、视频通话tab均跳正确用例执行完毕了。。。。')
 
 
