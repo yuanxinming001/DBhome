@@ -322,6 +322,166 @@ class DBhome(unittest.TestCase):
             print(f'case{casenumber}、检查首页特色功能模块遥控器、视频通话tab均跳正确用例执行完毕了1')
 
 
+    def test04_Systemfunctioncheck(self, uiauto2=uiautomator2):
+
+        try:
+            driver = self.driver
+            global casenumber
+            casenumber += 1
+
+            uiauto2 = uiauto2.connect_usb('PQY5T20A14007047')
+            uiauto2.app_start('com.dangbei.remotecontroller')
+
+        except:
+
+            raise Exception('app启动失败')
+
+
+        try:
+             # 检查首页系统功能title存在
+             Systemfunctiontitle = driver.find_element(By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView'
+                                                            '/android.view.ViewGroup[2]/android.widget.TextView[1]')
+
+
+             # 检查首页系统功能里面的找回遥控器功能存在
+
+             FindTheremotecontrol = driver.find_element(By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView'
+                                                             '/android.view.ViewGroup[1]/android.widget.TextView')
+
+             # 检查首页系统设置功能存在
+
+             pagesetupthe = driver.find_element(By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView'
+                                                     '/android.view.ViewGroup[2]/android.widget.TextView')
+
+             # 检查首页自动对焦功能存在
+
+             autofocus = driver.find_element(By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView'
+                                                  '/android.view.ViewGroup[3]/android.widget.TextView')
+
+             # 检查首页梯行矫正功能存在
+
+             Trapezoidalcorrection = driver.find_element(By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView'
+                                                              '/android.view.ViewGroup[4]/android.widget.TextView')
+
+        except:
+
+            raise Exception('获取系统功能失败')
+
+        try:
+            if Systemfunctiontitle and FindTheremotecontrol and pagesetupthe and autofocus and Trapezoidalcorrection:
+                with open(case_result, 'a') as result1:
+                    driver.implicitly_wait(5)
+                    result1.write(f"case:{casenumber}首页系统功能模块找回遥控器、设置、自动对焦、梯形矫正均展示正确\n")
+                    print("首页系统功能模块找回遥控器、设置、自动对焦、梯形矫正均展示正确")
+                    result1.close()
+            else:
+                with open(case_result, 'a') as result1:
+                    driver.implicitly_wait(5)
+                    result1.write(f"case:{casenumber}首页系统功能模块找回遥控器、设置、自动对焦、梯形矫正均展示错误\n")
+                    print("首页系统功能模块找回遥控器、设置、自动对焦、梯形矫正均展示错误")
+                    result1.close()
+
+        except:
+
+            raise Exception('判断首页系统功能存在失败')
+
+        print(f'case{casenumber}、检查首页系统功能模块找回遥控器、设置、自动对焦、梯形矫正展示正确用例执行完毕了')
+
+
+    def test05Systemallfunction(self, uiauto2=uiautomator2):
+
+        try:
+            driver = self.driver
+            global casenumber
+            casenumber += 1
+
+            uiauto2 = uiauto2.connect_usb('PQY5T20A14007047')
+            uiauto2.app_start('com.dangbei.remotecontroller')
+
+        except:
+
+            raise Exception('app启动失败')
+
+        try:
+
+            # 检查首页系统功能模块的全部功能按钮存在
+            allfunction = driver.find_element(By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView'
+                                                        '/android.view.ViewGroup[2]/android.widget.TextView[2]')
+
+
+            # 点击全部功能按钮
+
+            clickallfunction = driver.find_element(By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView'
+                                                             '/android.view.ViewGroup[2]/android.widget.TextView[2]').click()
+
+
+            # 获取系统共能详情页面管理（management）button的标识
+
+            management = driver.find_element(By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout'
+                                                       '/android.widget.RelativeLayout/android.widget.TextView[2]')
+
+
+            # 获取系统共能详情页面模式切换（Themodeswitch）button的标识
+
+            Themodeswitch = driver.find_element(By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/androidx.recyclerview.widget.RecyclerView[1]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.TextView')
+
+
+        except:
+
+            raise Exception("点击全部功能tab跳转页面错误")
+
+        try:
+
+            if allfunction and clickallfunction and management and Themodeswitch:
+                with open(case_result, 'a') as result1:
+                    driver.implicitly_wait(5)
+                    result1.write(f"case:{casenumber}首页系统功能模块全部功能展示正确，点击跳转页面正确\n")
+                    print("首页系统功能模块全部功能展示正确，点击跳转页面正确")
+                    result1.close()
+            else:
+                with open(case_result, 'a') as result1:
+                    driver.implicitly_wait(5)
+                    result1.write(f"case:{casenumber}首页系统功能模块全部功能展示错误，点击跳转页面错误\n")
+                    print("首页系统功能模块全部功能展示错误，点击跳转页面错误")
+                    result1.close()
+
+        except:
+
+            raise Exception('判断首页系统全部功能button存在失败')
+
+        print(f'case{casenumber}、首页系统功能模块全部功能展示错误，点击跳转页面正确用例执行完毕了')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
