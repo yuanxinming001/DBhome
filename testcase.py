@@ -25,6 +25,75 @@ class DBhome(unittest.TestCase):
         self.verificationErrors = []  # 脚本运行时，错误的信息将被打印到这个列表中#
         self.accept_next_alert = True  # 是否继续接受下一个警告#
 
+    """# 检查是否登录，没有登录的话执行登录操作
+    def dblogin(self,uiauto2=uiautomator2):
+        driver = self.driver
+        global casenumber
+        casenumber += 1
+
+        uiauto2 = uiauto2.connect_usb('PQY5T20A14007047')
+        uiauto2.app_start('com.dangbei.remotecontroller')
+
+        # 检查设备是否处于登录状态 1 点击我的tab进入我的页面检查登录状态
+        driver.implicitly_wait(5)
+        driver.find_element(By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/'
+                                      'android.widget.FrameLayout/android.widget.'
+                                      'LinearLayout/android.widget.FrameLayout/android.widget.'
+                                      'FrameLayout/android.widget.LinearLayout/android.widget.'
+                                      'FrameLayout[3]/android.widget.ImageView').click()
+
+        # 获取登录状态是否是登录中
+        logininfo =driver.find_element(By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout'
+                                                 '/android.widget.FrameLayout/android.widget.LinearLayout/android.'
+                                                 'widget.FrameLayout/android.widget.FrameLayout[1]/androidx.viewpager.widget.'
+                                                 'ViewPager'
+                                                 '/android.widget.LinearLayout/android.view.ViewGroup/android.widget.TextView')
+        if logininfo():
+            logininfo.click()
+
+            # 检查成功跳转到登录页面
+            loginpage = driver.find_element(By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.'
+                                                      'FrameLayout/android.widget.LinearLayout/android.widget.TextView[1]')
+
+            if loginpage():
+
+                # 点击同意协议
+                driver.find_element(By.XPATH,
+                                    '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout'
+                                    '/android.widget.LinearLayout[2]/android.widget.ImageView').click()
+
+
+                # 点击其他登录方式
+                driver.find_element(By.XPATH,
+                                    '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout'
+                                    '/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.'
+                                    'ImageView[2]').click()
+                # 点击输入手机号输入框
+                driver.find_element(By.XPATH,
+                                    '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]'
+                                    '/android.widget.LinearLayout[1]/android.widget.EditText').click()
+
+                # 输入手机号
+                iniphonenumb = driver.find_element(By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]'
+                                                             '/android.widget.LinearLayout[1]/android.widget.EditText').send_keys('17600555113')
+
+                # 点击输入密码框
+
+                driver.find_element(By.XPATH,
+                                    '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]'
+                                    '/android.widget.LinearLayout[2]/android.widget.EditText').click()
+
+                # 输入密码
+                password = driver.find_element(By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]'
+                                                         '/android.widget.LinearLayout[2]/android.widget.EditText').send_keys('yuanxinming118')
+
+                # 同意登录按钮点击
+
+                driver.find_element(By.XPATH,
+                                    '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.ScrollView'
+                                    '/android.widget.LinearLayout/android.widget.Button').click()
+
+"""
     # 检查首页特色功能模块展示正确
     def test01_Featuresmodule(self, uiauto2=uiautomator2):
 
@@ -250,6 +319,9 @@ class DBhome(unittest.TestCase):
                     print("首页特色功能模块遥控器、魔法同屏、远程看家、视频通话tab均跳转错误页面")
                     result1.close()
 
-            print(f'case{casenumber}、检查首页特色功能模块遥控器、视频通话tab均跳正确用例执行完毕了')
+            print(f'case{casenumber}、检查首页特色功能模块遥控器、视频通话tab均跳正确用例执行完毕了1')
+
+
+
 
 
