@@ -146,13 +146,13 @@ class DBhome(unittest.TestCase):
             if features and The_remote_control and magic and Remote_guarding and Video_call:
                 with open(case_result, 'w') as result1:
                     driver.implicitly_wait(5)
-                    result1.write(f"case:{casenumber}首页特色功能模块展示正确\n")
+                    result1.write(f"case:{casenumber}首页特色功能模块展示正确<br>")
                     print("首页特色功能模块展示正确")
                     result1.close()
             else:
                 with open(case_result, 'w') as result1:
                     driver.implicitly_wait(5)
-                    result1.write(f"case:{casenumber}首页特色功能模块展示错误\n")
+                    result1.write(f"case:{casenumber}首页特色功能模块展示错误<br>")
                     print("首页特色功能模块展示错误")
                     result1.close()
 
@@ -161,7 +161,7 @@ class DBhome(unittest.TestCase):
             raise Exception('首页特色功能模块展示错误，请检查')
             with open(case_result, 'w') as result1:
                 driver.implicitly_wait(5)
-                result1.write(f"case:{casenumber}首页特色功能模块遥控器、魔法同屏、远程看家、视频通话tab均跳转错误\n")
+                result1.write(f"case:{casenumber}首页特色功能模块遥控器、魔法同屏、远程看家、视频通话tab均跳转错误<br>")
                 print("首页特色功能模块遥控器、魔法同屏、远程看家、视频通话tab均跳转错误页面")
                 result1.close()
 
@@ -214,13 +214,13 @@ class DBhome(unittest.TestCase):
             if featuresfunction:
                 with open(case_result, 'a') as result1:
                     driver.implicitly_wait(5)
-                    result1.write(f"case:{casenumber}点击首页特色功能模块全部功能，跳转页面展示正确。\n")
+                    result1.write(f"case:{casenumber}点击首页特色功能模块全部功能，跳转页面展示正确。<br>")
                     print("点击首页特色功能模块全部功能，跳转页面展示正确。")
                     result1.close()
             else:
                 with open(case_result, 'a') as result1:
                     driver.implicitly_wait(5)
-                    result1.write(f"case:{casenumber}点击首页特色功能模块全部功能，跳转页面展示错误\n")
+                    result1.write(f"case:{casenumber}点击首页特色功能模块全部功能，跳转页面展示错误<br>")
                     print("点击首页特色功能模块全部功能，跳转页面错误。")
                     result1.close()
 
@@ -228,11 +228,11 @@ class DBhome(unittest.TestCase):
 
             with open(case_result, 'a') as result1:
                 driver.implicitly_wait(5)
-                result1.write(f"case:{casenumber}点击首页特色功能模块全部功能，跳转页面展示错误\n")
-                print("点击首页特色功能模块全部功能，跳转页面错误。")
+                result1.write(f"case:{casenumber}点击首页特色功能模块全部功能，跳转页面展示错误<br>")
+                print("点击首页特色功能模块全部功能，跳转页面错误。<br>")
                 result1.close()
 
-        print(f'case{casenumber}、检查首页特色功能模块，点击更多功能跳转页面用例执行结束')
+        print(f'case{casenumber}、检查首页特色功能模块，点击更多功能跳转页面用例执行结束<br>')
 
     # 检查首页特色功能模块遥控器、视频通话tab均跳转正确页面
     def test03_Featuresmodule_tabfind(self, uiauto2=uiautomator2):
@@ -300,13 +300,13 @@ class DBhome(unittest.TestCase):
                 if FindVideocall1 and FindVideocall1:
                     with open(case_result, 'a') as result1:
                         driver.implicitly_wait(5)
-                        result1.write(f"case:{casenumber}首页特色功能模块遥控器、魔法同屏、远程看家、视频通话tab均跳转正确页面\n")
+                        result1.write(f"case:{casenumber}首页特色功能模块遥控器、魔法同屏、远程看家、视频通话tab均跳转正确页面<br>")
                         print("首页特色功能模块遥控器、魔法同屏、远程看家、视频通话tab均跳转正确页面")
                         result1.close()
                 else:
                     with open(case_result, 'a') as result1:
                         driver.implicitly_wait(5)
-                        result1.write(f"case:{casenumber}首页特色功能模块遥控器、魔法同屏、远程看家、视频通话tab均跳转错误\n")
+                        result1.write(f"case:{casenumber}首页特色功能模块遥控器、魔法同屏、远程看家、视频通话tab均跳转错误<br>")
                         print("首页特色功能模块遥控器、魔法同屏、远程看家、视频通话tab均跳转错误页面")
                         result1.close()
 
@@ -315,7 +315,7 @@ class DBhome(unittest.TestCase):
                 raise Exception('判断跳转页面逻辑错误，请检查')
                 with open(case_result, 'a') as result1:
                     driver.implicitly_wait(5)
-                    result1.write(f"case:{casenumber}首页特色功能模块遥控器、魔法同屏、远程看家、视频通话tab均跳转错误\n")
+                    result1.write(f"case:{casenumber}首页特色功能模块遥控器、魔法同屏、远程看家、视频通话tab均跳转错误<br>")
                     print("首页特色功能模块遥控器、魔法同屏、远程看家、视频通话tab均跳转错误页面")
                     result1.close()
 
@@ -371,13 +371,13 @@ class DBhome(unittest.TestCase):
             if Systemfunctiontitle and FindTheremotecontrol and pagesetupthe and autofocus and Trapezoidalcorrection:
                 with open(case_result, 'a') as result1:
                     driver.implicitly_wait(5)
-                    result1.write(f"case:{casenumber}首页系统功能模块找回遥控器、设置、自动对焦、梯形矫正均展示正确\n")
+                    result1.write(f"case:{casenumber}首页系统功能模块找回遥控器、设置、自动对焦、梯形矫正均展示正确<br>")
                     print("首页系统功能模块找回遥控器、设置、自动对焦、梯形矫正均展示正确")
                     result1.close()
             else:
                 with open(case_result, 'a') as result1:
                     driver.implicitly_wait(5)
-                    result1.write(f"case:{casenumber}首页系统功能模块找回遥控器、设置、自动对焦、梯形矫正均展示错误\n")
+                    result1.write(f"case:{casenumber}首页系统功能模块找回遥控器、设置、自动对焦、梯形矫正均展示错误<br>")
                     print("首页系统功能模块找回遥控器、设置、自动对焦、梯形矫正均展示错误")
                     result1.close()
 
@@ -435,13 +435,13 @@ class DBhome(unittest.TestCase):
             if allfunction and clickallfunction and management and Themodeswitch:
                 with open(case_result, 'a') as result1:
                     driver.implicitly_wait(5)
-                    result1.write(f"case:{casenumber}首页系统功能模块全部功能展示正确，点击跳转页面正确\n")
+                    result1.write(f"case:{casenumber}首页系统功能模块全部功能展示正确，点击跳转页面正确<br>")
                     print("首页系统功能模块全部功能展示正确，点击跳转页面正确")
                     result1.close()
             else:
                 with open(case_result, 'a') as result1:
                     driver.implicitly_wait(5)
-                    result1.write(f"case:{casenumber}首页系统功能模块全部功能展示错误，点击跳转页面错误\n")
+                    result1.write(f"case:{casenumber}首页系统功能模块全部功能展示错误，点击跳转页面错误<br>")
                     print("首页系统功能模块全部功能展示错误，点击跳转页面错误")
                     result1.close()
 
