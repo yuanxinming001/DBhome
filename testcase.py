@@ -216,7 +216,7 @@ class DBhome(unittest.TestCase):
                     driver.implicitly_wait(5)
                     result1.write(f"case:{casenumber}点击首页特色功能模块全部功能，跳转页面展示正确。<br>")
                     print("点击首页特色功能模块全部功能，跳转页面展示正确。")
-                    result1.close()
+
             else:
                 with open(case_result, 'a') as result1:
                     driver.implicitly_wait(5)
@@ -293,7 +293,13 @@ class DBhome(unittest.TestCase):
 
             except:
 
+                with open(case_result, 'a') as result1:
+                    driver.implicitly_wait(5)
+                    result1.write(f"case:{casenumber}首页特色功能模块遥控器、魔法同屏、远程看家、视频通话tab均跳转错误页面<br>")
+                    print("首页特色功能模块遥控器、魔法同屏、远程看家、视频通话tab均跳转错误页面")
+                    result1.close()
                 raise Exception('跳转页面和获取元素错误，请检查')
+
 
             try:
 
